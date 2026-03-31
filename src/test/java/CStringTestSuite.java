@@ -1,7 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
-
-import apcsa.githubtrack.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
+
+import apcsa.githubtrack.CString;
+import apcsa.githubtrack.CStringUtil;
+import apcsa.githubtrack.Main;
 
 public class CStringTestSuite {
 
@@ -65,7 +70,7 @@ public class CStringTestSuite {
   public void sortDescendingOrdersCharacters() {
     CString s = new CString("zebra");
     s.sortDescending();
-    assertCStringEquals("zrbea", s);
+    assertCStringEquals("zreba", s);
   }
 
   // Ensures descending sort handles repeated characters correctly.
@@ -178,7 +183,7 @@ public class CStringTestSuite {
   @Test
   public void maxMirrorCStringOverload() {
     CString s = new CString("abccba");
-    assertEquals(3, CStringUtil.maxMirror(s));
+    assertEquals(6, CStringUtil.maxMirror(s));
   }
 
   // Verifies the overloaded maxMirror for other CString inputs.
